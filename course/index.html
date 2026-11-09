@@ -788,10 +788,11 @@ section { padding: 80px 40px; }
     <li><a href="#about">על הקורס</a></li>
     <li><a href="#syllabus">סילבוס</a></li>
     <li><a href="#lecturer">המרצה</a></li>
-    <li><a href="#register" class="nav-cta">הרשמה</a></li>
+    <li><a href="#register" class="nav-cta">מחזור 2</a></li>
   </ul>
 </nav>
 
+<a href="#register" style="display:block;background:#307ac0;color:#fff;text-align:center;font-family:var(--font);font-weight:800;font-size:1.15rem;padding:14px 16px;text-decoration:none">מחזור מס' 1 יצא לדרך! &nbsp;|&nbsp; להרשמה למחזור מס' 2 ←</a>
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
@@ -816,22 +817,14 @@ section { padding: 80px 40px; }
       </div>
     </div>
     <div class="dates-row">
-      <div class="dates-label">מועדי המפגשים</div>
-      <div class="dates-chips">
-        <span class="date-chip">3.11.26</span>
-        <span class="date-chip">10.11.26</span>
-        <span class="date-chip">17.11.26</span>
-        <span class="date-chip">24.11.26</span>
-        <span class="date-chip">1.12.26</span>
-        <span class="date-chip clarify">8.12.26 (מפגש שאלות ותשובות)</span>
-      </div>
-      <div class="dates-time-note">המפגשים יחלו בשעה 16:00</div>
+      <div class="dates-label">מועדים</div>
+      <div class="dates-chips"><span class="date-chip">מחזור 2 יתחיל בינואר. טרם נקבעו מועדים מדויקים.</span></div>
     </div>
     <div class="price-note">
       עלות ההשתתפות: <span class="price-highlight">5,000 ₪</span> בתוספת מע"מ
     </div>
     <div class="hero-actions">
-      <a href="#register" class="btn-primary">להרשמה לקורס</a>
+      <a href="#register" class="btn-primary">להשארת פרטים למחזור 2</a>
       <a href="#syllabus" class="btn-secondary">לסילבוס המלא</a>
     </div>
   </div>
@@ -1103,7 +1096,7 @@ section { padding: 80px 40px; }
 <!-- REGISTRATION -->
 <section class="reg-section" id="register">
   <div class="container">
-    <div class="section-title">הרשמה לקורס</div>
+    <div class="section-title">הרשמה למחזור 2</div>
     <div class="section-divider"></div>
     <div class="reg-layout">
       <div class="reg-info">
@@ -1125,13 +1118,13 @@ section { padding: 80px 40px; }
           </div>
         </div>
         <div class="note-box">
-          לאחר קבלת טופס ההרשמה יישלחו לנרשם אישור הרשמה ופרטי תשלום. ההרשמה תושלם לאחר הסדרת התשלום.<br><br>
-          <strong>מספר המקומות בקורס מוגבל.</strong>
+          <strong>מחזור 2 יתחיל בינואר.</strong> טרם נקבעו מועדים מדויקים. מועד פתיחת הקורס תלוי במספר הנרשמים.<br><br>
+          להשארת פרטים נא למלא את הטופס המצורף.
         </div>
       </div>
 
       <div class="reg-form" id="regForm">
-        <div class="form-title">טופס הרשמה</div>
+        <div class="form-title">השארת פרטים – מחזור 2</div>
         <div id="formContent">
           <div class="form-row">
             <div class="form-group">
@@ -1161,12 +1154,12 @@ section { padding: 80px 40px; }
             <label for="education">השכלה / הכשרה מקצועית</label>
             <input type="text" id="education" placeholder="לדוגמה: שמאי מקרקעין, כלכלן...">
           </div>
-          <button type="button" class="form-submit" onclick="submitForm()">שלח טופס הרשמה</button>
+          <button type="button" class="form-submit" onclick="submitForm()">שליחת פרטים</button>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="check">✅</div>
-          <h3>הרשמתך התקבלה!</h3>
-          <p>פרטי הקשר שלך נשלחו למיקי הימלפרב.<br>תקבל/י אישור ופרטי תשלום בקרוב.</p>
+          <h3>פרטיך התקבלו!</h3>
+          <p>נעדכן אותך כשייקבעו המועדים של מחזור 2.</p>
         </div>
       </div>
     </div>
@@ -1223,7 +1216,7 @@ function submitForm() {
     method: 'POST',
     mode: 'no-cors',
     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify({ fname, phone, email, company, role, education })
+    body: JSON.stringify({ fname, phone, email, company, role, education, cohort: '2' })
   })
     .then(showSuccess)
     .catch(showError);
